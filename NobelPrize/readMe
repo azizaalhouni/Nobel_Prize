@@ -1,0 +1,19 @@
+JAVASCRIPT, ANGULARJS, EXPRESS, NODEJS, MONGOOSE
+To run 
+npm start
+http://localhost:4000/#/
+
+//click the check box to add a new person
+
+1- Get all the Nobel winners
+2- Get Details for each winners
+3- Delete one winner
+4-Add Next and prev pages
+5- Add search from DB and front end
+
+To add next and previos button 
+my idea is 
+To add the count and offset to data factory to return the certin amount of winners
+ then in the listHtml
+ I want to add next and previous with count and offset and each time you click next 
+ will check if countMax is less than of equal the contents

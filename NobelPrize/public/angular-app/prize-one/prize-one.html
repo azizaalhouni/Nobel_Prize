@@ -1,0 +1,11 @@
+<h1>Info about : {{vm.prize.firstname | uppercase}} {{vm.prize.surname | uppercase}}</h1>
+
+<p>
+   Gender: {{vm.prize.gender }}<br/>
+   Prize Category :  {{ vm.prize.category}}<br/>
+   Affiliation:  {{vm.prize.affiliation}}<br/>
+   Country of Birth:  {{vm.prize.bornCountry}}<br/>
+</p>
+<form name="vm.deleteForm" ng-submit="vm.deleteOnePerson()" >
+    <button type="submit" >Delete</button>
+</form>

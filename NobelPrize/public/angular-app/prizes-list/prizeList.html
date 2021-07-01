@@ -1,0 +1,45 @@
+<h1>  
+    {{vm.title}}
+</h1>
+Search by Country of birth :
+<form >
+    <input ng-model="search.bornCountry" type="search" name="search" id="">
+</form>
+<ul>
+    <li ng-repeat="prize in vm.prizes | filter:search">
+        <a ng-href="#prizes/{{prize._id}}">{{prize.firstname}} {{prize.surname}} 
+        Year: {{prize.year}} </a>
+    </li>
+</ul>
+<input type="checkbox" ng-model="showForm"> Wants to add a person
+
+<form name = "vm.prizeForm" ng-submit="vm.addNewPerson()" ng-if="showForm">
+To add a new Person  please fill in all the fields below: <br/><br/>
+<div class="form-group">
+    <label for="firstName">First Name :</label>
+ <input type="text" class="form-control" name="firstname" required ng-model="vm.newPersonFirstName">
+</div>
+<div class="form-group">
+    <label for="Surname">Surname: </label>
+<input type="text" class="form-control" name="surname" required ng-model="vm.newPersonSurname">
+</div>
+<div class="form-group">
+    <label for="Category">Category: </label>
+<input type="text" class="form-control" name= "category" ng-model="vm.newPersonCategory">
+</div>
+<div class="form-group">
+Year  <input type="text"  class="form-control" name="year" ng-model="vm.newPersonYear">
+</div>
+<div class="form-group">
+Date of Birth  <input type="text" class="form-control"  name="born" ng-model="vm.newPersonBorn">
+</div>
+<!-- Born Country : <input type="text" name="bornCountry" ng-model="vm.newPersonBornCountry"><br/><br/> -->
+<button type="submit" class="brn-success">Add New person</button><br/><br/>
+</form>
+
+<div class="container">
+
+    <button style="float: left;" ng-hide="vm.offset==0" ng-click=" vm.nextPage( 'prev') " class="btn btn-primary btn-lg ">Previous</button>
+
+    <button style="float: right;" ng-hide="vm.maxCount<=(vm.offset+vm.count)" type="button " ng-click="vm.nextPage('next') " class="btn btn-primary btn-lg ">Next</button>
+</div>
